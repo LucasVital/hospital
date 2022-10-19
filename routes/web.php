@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function(){
+    Route::get('/pacientes/cadastrar', \App\Http\Livewire\Paciente\Store::class)->name('paciente.store');
+});
+
+
+require __DIR__.'/auth.php';
