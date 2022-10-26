@@ -6,7 +6,7 @@
 
 <div class="py-12">
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-        <form wire:submit.prevent="store">
+        <form wire:submit.prevent="save">
             <div class="overflow-hidden shadow sm:rounded-md">
                 <div class="bg-white px-4 py-5 sm:p-6">
                     <div class="py-4">
@@ -124,7 +124,7 @@
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                             </div>
 
-{{--                        @elseif($paginaAtual == 2)--}}
+                        @elseif($paginaAtual == 2)
                             <div class="col-span-12">
                                 adfad
                             </div>

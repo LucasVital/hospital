@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Paciente;
 
+use App\Models\Paciente;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
-class Store extends Component
+class Create extends Component
 {
     public $paginaAtual = 1;
     public $nome;
@@ -48,9 +50,10 @@ class Store extends Component
 
     private $validationRules = [
         1 => [
-            'nome' => ['required']
+            'nome' => ['required'],
+            'sobrenome' => ['required']
         ],
-        2 => [
+        3 => [
             'cep' => ['required']
         ],
     ];
@@ -62,7 +65,9 @@ class Store extends Component
 
     public function nextStep()
     {
-        $this->validate($this->validationRules[$this->paginaAtual]);
+        if (isset($this->validationRules[$this->paginaAtual])) {
+            $this->validate($this->validationRules[$this->paginaAtual]);
+        }
         $this->paginaAtual++;
     }
 
@@ -71,15 +76,14 @@ class Store extends Component
         $this->paginaAtual--;
     }
 
-    public function store()
+    public function save()
     {
         $rules = collect($this->validationRules)->collapse()->toArray();
         $this->validate($rules);
-        dd('oi');
     }
 
-    public function render()
+    public function render(): View
     {
-        return view('livewire.paciente.store');
+        return view('livewire.paciente.create');
     }
 }

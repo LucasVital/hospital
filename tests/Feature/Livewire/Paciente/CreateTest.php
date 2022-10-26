@@ -6,13 +6,26 @@ use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseCount;
 use function Pest\Livewire\livewire;
 
-it('should be able to create a new paciente', function () {
-
+beforeEach(function () {
     $user = User::factory()->create();
 
     actingAs($user);
+});
 
-    livewire(App\Http\Livewire\Paciente\Store::class)
+it('paciente data should be required', function () {
+    livewire(\App\Http\Livewire\Paciente\Create::class)
+        ->set('nome', '')
+        ->set('sobrenome', '')
+        ->call('save')
+        ->assertHasErrors([
+            'nome' => 'required',
+            'sobrenome' => 'required',
+        ]);
+});
+
+it('should be able to create a new paciente', function () {
+
+    livewire(App\Http\Livewire\Paciente\Create::class)
         ->set('nome', 'Lucas')
         ->set('sobrenome', 'Pedreira Vital')
         ->set('cpf', '938.800.092-79')
@@ -42,3 +55,5 @@ it('should be able to create a new paciente', function () {
     assertDatabaseCount(Paciente::class, 1);
 
 });
+
+
