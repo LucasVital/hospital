@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->date('data_nascimento');
             $table->enum('estado_civil', ['Casado (a)', 'Solteiro (a)', 'União Estável', 'Divorciado (a)', 'Viúvo (a)']);
             $table->enum('genero', ['Masculino', 'Feminino']);
-            $table->string('tipo_sanguineo');
+            $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB', 'O+', '0-']);
             $table->string('email')->nullable();
             $table->string('foto')->nullable();
             $table->string('telefone')->nullable();
@@ -39,7 +40,9 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->string('cidade');
             $table->string('estado');
+            $table->foreignId('user_id')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
