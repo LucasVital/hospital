@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Paciente;
 use App\Models\Paciente;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
+    use WithFileUploads;
+
     public $paginaAtual = 1;
     public $nome;
     public $sobrenome;
@@ -33,6 +36,8 @@ class Create extends Component
     public $complemento;
     public $cidade;
     public $estado;
+    public $peso;
+    public $altura;
     public $paginas = [
         1 => [
             'titulo' => 'Dados Pessoais',
@@ -62,10 +67,10 @@ class Create extends Component
             'data_nascimento' => ['required', 'date'],
             'estado_civil' => ['required', 'max:50'],
             'genero' => ['required', 'max:50'],
-            'tipo_sanguineo' => ['nullable', 'string']
+            'tipo_sanguineo' => ['nullable']
         ],
         2 => [
-            'foto' => ['nullable', 'image', 'size:1024'],
+            'foto' => ['nullable', 'image', 'max:1024'],
             'nome_mae' => ['required', 'min:3', 'max:100'],
             'nome_pai' => ['nullable', 'string', 'min:3', 'max:100']
         ],
@@ -128,6 +133,8 @@ class Create extends Component
             'bairro' => $this->bairro,
             'cidade' => $this->cidade,
             'estado' => $this->estado,
+            'peso' => $this->peso,
+            'altura' => $this->altura,
             'user_id' => auth()->id()
         ]);
 

@@ -25,7 +25,7 @@
                                       clip-rule="evenodd"/>
                             </svg>
                             <input class="bg-gray-50 outline-none ml-1 block border-none focus:ring-0" type="text"
-                                   name="" id="" placeholder="procurar...">
+                                   wire:model="searching" id="searching" placeholder="procurar...">
                         </div>
                         <div class="lg:ml-40 ml-10 space-x-8">
                             <a href="{{ route('paciente.create') }}"
@@ -69,7 +69,7 @@
                                                 <div class="flex-shrink-0 w-10 h-10">
                                                     @if($paciente->foto)
                                                         <img class="w-full h-full rounded-full"
-                                                             src="{{ $paciente->foto }}"
+                                                             src="{{ $paciente->fotoUrl() }}"
                                                              alt=""/>
                                                     @else
                                                         <span

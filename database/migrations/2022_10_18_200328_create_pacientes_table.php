@@ -25,10 +25,10 @@ return new class extends Migration {
             $table->date('data_nascimento');
             $table->enum('estado_civil', ['Casado(a)', 'Solteiro(a)', 'União Estável', 'Divorciado(a)', 'Viúvo(a)']);
             $table->enum('genero', ['Masculino', 'Feminino']);
-            $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])->nullable();
+            $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', null])->nullable();
             $table->string('email')->nullable();
-            $table->decimal('peso', 3, 3)->nullable();
-            $table->decimal('altura', 1, 2)->nullable();
+            $table->string('peso')->nullable();
+            $table->string('altura')->nullable();
             $table->string('foto')->nullable();
             $table->string('telefone')->nullable();
             $table->string('responsavel')->nullable();

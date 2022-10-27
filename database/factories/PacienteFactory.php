@@ -30,7 +30,7 @@ class PacienteFactory extends Factory
             'genero' => fake()->randomElement(['Masculino', 'Feminino']),
             'tipo_sanguineo' => fake()->randomElement(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']),
             'email' => fake()->safeEmail,
-            'foto' => 'https://randomuser.me/api/portraits/women/'.fake()->numberBetween(20, 100).'.jpg',
+            'foto' => null,
             'telefone' => fake()->cellphoneNumber,
             'responsavel' => fake()->name,
             'nome_pai' => fake()->name('male'),
