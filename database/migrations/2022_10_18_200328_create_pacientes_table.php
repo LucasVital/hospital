@@ -5,8 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -21,17 +20,19 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('rg');
             $table->string('rg_emissor');
-            $table->string('nacionalidade');
+            $table->string('nacionalidade')->nullable();
             $table->string('cartao_sus')->nullable();
             $table->date('data_nascimento');
-            $table->enum('estado_civil', ['Casado (a)', 'Solteiro (a)', 'União Estável', 'Divorciado (a)', 'Viúvo (a)']);
+            $table->enum('estado_civil', ['Casado(a)', 'Solteiro(a)', 'União Estável', 'Divorciado(a)', 'Viúvo(a)']);
             $table->enum('genero', ['Masculino', 'Feminino']);
-            $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB', 'O+', '0-']);
+            $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])->nullable();
             $table->string('email')->nullable();
+            $table->decimal('peso', 3, 3)->nullable();
+            $table->decimal('altura', 1, 2)->nullable();
             $table->string('foto')->nullable();
             $table->string('telefone')->nullable();
             $table->string('responsavel')->nullable();
-            $table->string('nome_pai');
+            $table->string('nome_pai')->nullable();
             $table->string('nome_mae');
             $table->string('cep');
             $table->string('logradouro');
