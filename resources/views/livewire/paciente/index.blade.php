@@ -165,17 +165,17 @@
     <!-- Delete Paciente Modal -->
     <form wire:submit.prevent="delete">
         <x-modal.confirmation wire:model.defer="showConfirmModal">
-            <x-slot name="title">Remover o cliente ?</x-slot>
+            <x-slot name="title">Remover Cadastro</x-slot>
             <x-slot name="content">
-                <div class="py-8 text-cool-gray-700">
-                    Este cliente e todos os dados associados a ele serão removidos.
+                <div class="py-2 text-cool-gray-700">
+                    Tem certeza de que deseja remover este paciente? Todos os dados serão removidos permanentemente. Essa ação não pode ser desfeita
                 </div>
             </x-slot>
 
             <x-slot name="footer">
                 <div class="flex justify-end space-x-6">
-                    <button wire:click.prevent="$set('showConfirmModal', false)">Cancelar</button>
-                    <button type="submit">Remover</button>
+                    <button wire:click.prevent="$set('showConfirmModal', false)" class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Não remover</button>
+                    <button type="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Remover paciente</button>
                 </div>
             </x-slot>
         </x-modal.confirmation>
