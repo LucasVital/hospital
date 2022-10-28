@@ -30,7 +30,6 @@ class Index extends Component
             ->paginate()
             ->search($this->searching);
 
-
         return view('livewire.paciente.index', [
             'pacientes' => $pacientes
         ]);

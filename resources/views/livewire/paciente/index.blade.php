@@ -108,7 +108,7 @@
                                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 
                                             <div class="flex items-center space-x-6 justify-end">
-                                                <a href="{{ route('paciente.create') }}"
+                                                <a href="{{ route('paciente.edit', $paciente) }}"
                                                    class="text-white bg-yellow-600 px-3 py-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                          viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

@@ -41,7 +41,7 @@ class PacienteFactory extends Factory
             'bairro' => fake()->sentence(2),
             'complemento' => fake()->sentence(3),
             'cidade' => fake()->city,
-            'estado' => fake()->state,
+            'estado' => fake()->stateAbbr,
             'user_id' => User::factory(),
         ];
     }

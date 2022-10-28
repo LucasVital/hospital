@@ -17,8 +17,8 @@ return new class extends Migration {
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('cpf');
-            $table->string('rg');
+            $table->string('cpf')->unique();
+            $table->string('rg')->unique();
             $table->string('rg_emissor');
             $table->string('nacionalidade')->nullable();
             $table->string('cartao_sus')->nullable();
