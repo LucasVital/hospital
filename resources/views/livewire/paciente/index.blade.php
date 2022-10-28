@@ -11,12 +11,12 @@
 
 
                 <!-- component -->
-                <div class=" flex items-center justify-between pb-6">
-                    <div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6">
+                    <div class="text-left mb-6 sm:mb-0 sm:mr-20">
                         <h2 class="text-gray-600 font-semibold">Pacientes</h2>
                         <span class="text-xs">todos os pacientes</span>
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex flex-col flex-col-reverse sm:flex-row sm:items-center">
                         <div class="flex bg-gray-50 items-center p-2 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
                                  fill="currentColor">
@@ -24,10 +24,10 @@
                                       d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                       clip-rule="evenodd"/>
                             </svg>
-                            <input class="bg-gray-50 outline-none ml-1 block border-none focus:ring-0" type="text"
+                            <input class="bg-gray-50 sm:w-[15rem] md:w-[25rem] outline-none ml-1 block border-none focus:ring-0" type="text"
                                    wire:model="searching" id="searching" placeholder="procurar...">
                         </div>
-                        <div class="lg:ml-40 ml-10 space-x-8">
+                        <div class="lg:ml-40 sm:ml-10 mb-6 sm:mb-0">
                             <a href="{{ route('paciente.create') }}"
                                class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">Cadastrar</a>
                         </div>
@@ -118,7 +118,7 @@
                                                     </svg>
                                                 </a>
 
-                                                <a href="{{ route('paciente.create') }}"
+                                                <button wire:click.prevent="confirmDeletePaciente({{$paciente->id}})"
                                                    class="text-white bg-red-600 px-3 py-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                          viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -126,7 +126,7 @@
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                               d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
                                                     </svg>
-                                                </a>
+                                                </button>
                                             </div>
 
                                         </td>
@@ -158,8 +158,27 @@
 
                 </div>
 
-
             </div>
         </div>
     </div>
+
+    <!-- Delete Paciente Modal -->
+    <form wire:submit.prevent="delete">
+        <x-modal.confirmation wire:model.defer="showConfirmModal">
+            <x-slot name="title">Remover o cliente ?</x-slot>
+            <x-slot name="content">
+                <div class="py-8 text-cool-gray-700">
+                    Este cliente e todos os dados associados a ele serão removidos.
+                </div>
+            </x-slot>
+
+            <x-slot name="footer">
+                <div class="flex justify-end space-x-6">
+                    <button wire:click.prevent="$set('showConfirmModal', false)">Cancelar</button>
+                    <button type="submit">Remover</button>
+                </div>
+            </x-slot>
+        </x-modal.confirmation>
+    </form>
+
 </div>

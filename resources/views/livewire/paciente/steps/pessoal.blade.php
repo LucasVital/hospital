@@ -35,7 +35,7 @@
         <div class="col-span-6 sm:col-span-4">
             <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone</label>
             <input type="tel" wire:model.lazy="telefone" id="telefone"
-                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm phone">
             @error('telefone') <span
                 class="text-red-700 text-xs">{{ $message }}</span> @enderror
         </div>
@@ -45,7 +45,7 @@
                 <x-asterisk/>
             </label>
             <input type="text" wire:model.lazy="cpf" id="cpf"
-                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm cpf">
             @error('cpf') <span
                 class="text-red-700 text-xs">{{ $message }}</span> @enderror
         </div>
@@ -148,20 +148,27 @@
             </select>
         </div>
 
-        <div class="col-span-6 sm:col-span-4">
-            <label for="peso" class="block text-sm font-medium text-gray-700">Peso</label>
-            <input type="text" wire:model.lazy="peso" id="peso"
-                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            @error('peso') <span
-                class="text-red-700 text-xs">{{ $message }}</span> @enderror
-        </div>
+        <div class="col-span-12">
 
-        <div class="col-span-6 sm:col-span-4">
-            <label for="altura" class="block text-sm font-medium text-gray-700">Altura</label>
-            <input type="text" wire:model.lazy="altura" id="altura"
-                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            @error('altura') <span
-                class="text-red-700 text-xs">{{ $message }}</span> @enderror
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-3 sm:col-span-2">
+                    <label for="peso" class="block text-sm font-medium text-gray-700">Peso (kg)</label>
+                    <input type="text" wire:model.lazy="peso" id="peso"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm peso">
+                    @error('peso') <span
+                        class="text-red-700 text-xs">{{ $message }}</span> @enderror
+                </div>
+
+                <div class="col-span-3 sm:col-span-2">
+                    <label for="altura" class="block text-sm font-medium text-gray-700">Altura (m)</label>
+                    <input type="text" wire:model.lazy="altura" id="altura"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm altura">
+                    @error('altura') <span
+                        class="text-red-700 text-xs">{{ $message }}</span> @enderror
+                </div>
+
+            </div>
+
         </div>
 
     </div>

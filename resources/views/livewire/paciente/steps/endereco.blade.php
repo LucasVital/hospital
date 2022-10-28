@@ -6,8 +6,8 @@
             <label for="cep" class="block text-sm font-medium text-gray-700">CEP
                 <x-asterisk/>
             </label>
-            <input type="text" wire:model.lazy="cep" id="cep" autocomplete="email"
-                   class="mt-1 block w-[120px] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+            <input type="text" wire:model.lazy="cep" id="cep"
+                   class="mt-1 block w-[120px] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm cep">
             @error('cep') <span
                 class="text-red-700 text-xs">{{ $message }}</span> @enderror
         </div>
@@ -83,3 +83,4 @@
         </button>
     </div>
 </div>
+

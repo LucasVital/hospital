@@ -7,10 +7,11 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Spatie\LivewireWizard\Components\StepComponent;
+use Usernotnull\Toast\Concerns\WireToast;
 
 class FotoStepComponent extends StepComponent
 {
-    use WithFileUploads;
+    use WithFileUploads, WireToast;
 
     public $foto;
     public $uploadUpdate;
@@ -36,46 +37,50 @@ class FotoStepComponent extends StepComponent
 
         $filename = $this->foto;
 
-       if(is_object($this->uploadUpdate)) {
-           $this->deleteFoto();
-           $filename = $this->uploadUpdate->store('/', 'fotos');
-       }
+        if (is_object($this->uploadUpdate)) {
+            $this->deleteFoto();
+            $filename = $this->uploadUpdate->store('/', 'fotos');
+        }
 
-       if(is_object($this->foto)) {
-           $filename = $this->foto->store('/', 'fotos');
-       }
+        if (is_object($this->foto)) {
+            $filename = $this->foto->store('/', 'fotos');
+        }
 
         Paciente::query()->updateOrCreate(
             ['id' => (int)$this->foto_edit],
             [
-            'nome' => $pessoal['nome'],
-            'sobrenome' => $pessoal['sobrenome'],
-            'cpf' => $pessoal['cpf'],
-            'rg' => $pessoal['rg'],
-            'rg_emissor' => $pessoal['rg_emissor'],
-            'nacionalidade' => $pessoal['nacionalidade'],
-            'cartao_sus' => $pessoal['cartao_sus'],
-            'data_nascimento' => $pessoal['data_nascimento'],
-            'estado_civil' => $pessoal['estado_civil'],
-            'genero' => $pessoal['genero'],
-            'tipo_sanguineo' => $pessoal['tipo_sanguineo'],
-            'email' => $pessoal['email'],
-            'peso' => $pessoal['peso'],
-            'altura' => $pessoal['altura'],
-            'telefone' => $pessoal['telefone'],
-            'foto' => $filename ?? null,
-            'nome_mae' => $parente['nome_mae'],
-            'nome_pai' => $parente['nome_pai'],
-            'responsavel' => $parente['responsavel'],
-            'cep' => $endereco['cep'],
-            'logradouro' => $endereco['logradouro'],
-            'numero' => $endereco['numero'],
-            'bairro' => $endereco['bairro'],
-            'complemento' => $endereco['complemento'],
-            'cidade' => $endereco['cidade'],
-            'estado' => $endereco['estado'],
-            'user_id' => auth()->id()
-        ]);
+                'nome' => $pessoal['nome'],
+                'sobrenome' => $pessoal['sobrenome'],
+                'cpf' => $pessoal['cpf'],
+                'rg' => $pessoal['rg'],
+                'rg_emissor' => $pessoal['rg_emissor'],
+                'nacionalidade' => $pessoal['nacionalidade'],
+                'cartao_sus' => $pessoal['cartao_sus'],
+                'data_nascimento' => $pessoal['data_nascimento'],
+                'estado_civil' => $pessoal['estado_civil'],
+                'genero' => $pessoal['genero'],
+                'tipo_sanguineo' => $pessoal['tipo_sanguineo'],
+                'email' => $pessoal['email'],
+                'peso' => $pessoal['peso'],
+                'altura' => $pessoal['altura'],
+                'telefone' => $pessoal['telefone'],
+                'foto' => $filename ?? null,
+                'nome_mae' => $parente['nome_mae'],
+                'nome_pai' => $parente['nome_pai'],
+                'responsavel' => $parente['responsavel'],
+                'cep' => $endereco['cep'],
+                'logradouro' => $endereco['logradouro'],
+                'numero' => $endereco['numero'],
+                'bairro' => $endereco['bairro'],
+                'complemento' => $endereco['complemento'],
+                'cidade' => $endereco['cidade'],
+                'estado' => $endereco['estado'],
+                'user_id' => auth()->id()
+            ]);
+
+        toast()
+            ->success('Paciente cadastrado com sucesso!')
+            ->pushOnNextPage();
 
         $this->redirect(route('paciente.index'));
 

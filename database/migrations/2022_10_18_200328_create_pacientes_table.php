@@ -27,8 +27,8 @@ return new class extends Migration {
             $table->enum('genero', ['Masculino', 'Feminino']);
             $table->enum('tipo_sanguineo', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', null])->nullable();
             $table->string('email')->nullable();
-            $table->string('peso')->nullable();
-            $table->string('altura')->nullable();
+            $table->unsignedDecimal('peso', 3, 1)->nullable();
+            $table->unsignedDecimal('altura')->nullable();
             $table->string('foto')->nullable();
             $table->string('telefone')->nullable();
             $table->string('responsavel')->nullable();
