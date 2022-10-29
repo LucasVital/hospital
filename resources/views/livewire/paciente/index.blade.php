@@ -9,7 +9,6 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
 
-
                 <!-- component -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6">
                     <div class="text-left mb-6 sm:mb-0 sm:mr-20">
@@ -91,7 +90,7 @@
                                             </div>
                                         </td>
                                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p class="text-gray-900 whitespace-no-wrap">
+                                            <p class="text-gray-900 whitespace-no-wrap w-[130px]">
                                                 {{ $paciente->telefone }}
                                             </p>
                                         </td>
@@ -142,20 +141,16 @@
                                 </tbody>
                             </table>
 
-
-                            <div class="p-6 hidden sm:block">
+                            <div class="p-6 hidden lg:block">
                                 {{ $pacientes->links('vendor.livewire.tailwind') }}
                             </div>
-
-
 
                         </div>
                     </div>
 
-                    <div class="p-3 sm:hidden">
-                        {{ $pacientes->links('vendor.livewire.simple-tailwind') }}
+                    <div class="p-3 lg:hidden">
+                        {{ $pacientes->onEachSide(2)->links('vendor.livewire.simple-tailwind') }}
                     </div>
-
                 </div>
 
             </div>
@@ -173,7 +168,7 @@
             </x-slot>
 
             <x-slot name="footer">
-                <div class="flex justify-end space-x-6">
+                <div class="flex items-center justify-end space-x-6">
                     <button wire:click.prevent="$set('showConfirmModal', false)" class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Não remover</button>
                     <button type="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Remover paciente</button>
                 </div>

@@ -135,8 +135,8 @@
             <label for="tipo_sanguineo" class="block text-sm font-medium text-gray-700">Tipo
                 Sanguíneo</label>
             <select id="tipo_sanguineo" wire:model.lazy="tipo_sanguineo"
-                    class="mt-1 block w-20 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                <option value="Selecione..." disabled>...</option>
+                    class="mt-1 block w-28 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                <option value="" disabled>Selecione...</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
