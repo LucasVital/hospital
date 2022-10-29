@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Paciente\Steps;
 
+use Illuminate\Contracts\View\View;
 use Spatie\LivewireWizard\Components\StepComponent;
 
 class ParenteStepComponent extends StepComponent
@@ -38,7 +39,7 @@ class ParenteStepComponent extends StepComponent
         ];
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.paciente.steps.parente');
     }
