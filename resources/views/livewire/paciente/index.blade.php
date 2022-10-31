@@ -140,16 +140,11 @@
                                 @endforelse
                                 </tbody>
                             </table>
-
-                            <div class="p-6 hidden lg:block">
-                                {{ $pacientes->links('vendor.livewire.tailwind') }}
-                            </div>
-
                         </div>
                     </div>
 
-                    <div class="p-3 lg:hidden">
-                        {{ $pacientes->onEachSide(2)->links('vendor.livewire.simple-tailwind') }}
+                    <div class="p-6">
+                        {{ $pacientes->links('vendor.livewire.tailwind') }}
                     </div>
                 </div>
 
