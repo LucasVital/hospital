@@ -1,5 +1,5 @@
 
-# Protótipo do CRUD de cadastro de pacientes para disciplina de de Interação Humano Computador
+# Projeto - CRUD de cadastro de pacientes - para disciplina de Interação Humano Computador
 
 ## Projeto online.
 
@@ -13,6 +13,13 @@ Senha: alunoifro
 
 ## Protótipo no Figma
 [Acesar projeto no figma](https://www.figma.com/file/GAzYkuuMa2NHkVUp5sfGos/Hospital?node-id=0%3A1&t=yyis839mufcCkzcm-0)
+
+# Tecnologias
+- [Laravel](https://laravel.com/)
+- [Livewire](https://laravel-livewire.com/)
+- [Tailwindcss](https://tailwindcss.com/)
+- Banco de dados MySQL(https://www.mysql.com/)
+- DigitalOcean(https://www.digitalocean.com/)
 
 # Alunos
 - Isaias Felix
