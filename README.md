@@ -1,5 +1,5 @@
 
-# Projeto - CRUD de cadastro de pacientes - para disciplina de Interação Humano Computador
+# CRUD de cadastro de pacientes para disciplina de Interação Humano Computador
 
 ## Projeto online.
 
