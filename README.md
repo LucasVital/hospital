@@ -3,7 +3,7 @@
 
 ## Projeto online.
 
-[Acessar o projeto online](https://hospital.erecibos.com.br/login)
+[Acessar demostração on-line](https://hospital.erecibos.com.br/login)
 
 ## Protótipo no Figma
 [Acesar projeto no figma](https://www.figma.com/file/GAzYkuuMa2NHkVUp5sfGos/Hospital?node-id=0%3A1&t=yyis839mufcCkzcm-0)
