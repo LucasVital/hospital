@@ -12,3 +12,5 @@
 - Thauan felipe
 - Josias Dutra
 - Gabriel Nascimento
+
+![Print do projeto](https://raw.githubusercontent.com/LucasVital/hospital/main/print.png)
