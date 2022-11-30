@@ -18,8 +18,9 @@ Senha: alunoifro
 - [Laravel](https://laravel.com/)
 - [Livewire](https://laravel-livewire.com/)
 - [Tailwindcss](https://tailwindcss.com/)
-- Banco de dados MySQL(https://www.mysql.com/)
-- DigitalOcean(https://www.digitalocean.com/)
+- [Banco de dados MySQL](https://www.mysql.com/)
+- [DigitalOcean](https://www.digitalocean.com/)
+- [4devs para gerar dados fake](https://www.4devs.com.br/gerador_de_pessoas)
 
 # Alunos
 - Isaias Felix
