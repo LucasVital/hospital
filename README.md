@@ -12,7 +12,7 @@ E-mail: alunoifro@email.com
 Senha: alunoifro
 
 ## Protótipo no Figma
-[Acesar projeto no figma](https://www.figma.com/file/GAzYkuuMa2NHkVUp5sfGos/Hospital?node-id=0%3A1&t=yyis839mufcCkzcm-0)
+[Acesar projeto no figma](https://www.figma.com/community/file/1179575765761818242)
 
 # Tecnologias
 - [Laravel](https://laravel.com/)
